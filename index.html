@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Control</title>
+</head>
+<body>
+    <h1>Light Control</h1>
+
+    <p>Current Light State: {% if light_state %}On{% else %}Off{% endif %}</p>
+
+    <form action="/toggle_light" method="get">
+        <input type="submit" value="Toggle Light 💡">
+    </form>
+
+    <div style="margin-top: 10px;"></div>
+
+    <form action="/run_pir" method="get">
+        <input type="submit" value="{% if motion_mode %}Deactivate Motion Mode{% else %}Activate Motion Mode 🏃{% endif %}">
+    </form>
+
+    <div style="margin-top: 10px;"></div>
+
+    <form action="/toggle_party" method="get">
+        <input type="submit" value="{% if party_mode %}Deactivate Party Mode{% else %}Activate Party Mode 🥳{% endif %}">
+    </form>
+</body>
+</html>
